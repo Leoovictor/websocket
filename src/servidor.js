@@ -13,12 +13,10 @@ const diretorioPublico = path.join(caminhoAtual, "../..", "public") //acessando 
 app.use(express.static(diretorioPublico))
 
 const servidorHttp = http.createServer(app)
-servidorHttp.listen(porta, () => console.log(`Sevidor 127.0.0.1:${porta}`))
+servidorHttp.listen(porta, () => console.log(`Sevidor: 127.0.0.1:${porta}`))
 
 const io = new Server(servidorHttp)
 
-io.on("connection", () => {
-    console.log("cliente se conectou")
-})
+export default io
 
 // app.listen(porta, () => console.log(`Servidor rodando ${porta}`))
